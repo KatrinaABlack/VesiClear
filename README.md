@@ -42,9 +42,19 @@ Gap-clip options: `--gap_confidence` (default 0.2), `--gap_min_arc` (default 175
 
 ## 2. Membrane subtraction
 
-`vesiclear/subtraction/membrane_subtraction_v4_clipped.py` removes the masked membrane region by
-inpainting: local-mean replacement plus clipped, high-pass spectral noise matched to the
-surrounding background, blended over a distance ramp. CLI-driven (`--help`).
+`vesiclear/subtraction/` turns the refined leaflets into membrane-subtracted micrographs in
+three steps:
+
+1. **`spline_to_mrc.py`** — rasterize the leaflet splines (`{uid}_vesicle_{i}_{inner,outer}.npy`)
+   into a binary membrane mask and dilate by `--dilation_radius`, writing `{uid}_*_splines.mrc`.
+2. **`membrane_subtraction_v4_clipped.py`** — subtract the membrane in one micrograph given that
+   mask (`--input_mrc --mask_mrc --output_mrc`): inpaint the masked region with local-mean
+   replacement plus clipped, high-pass spectral noise matched to the surrounding background,
+   blended over a distance ramp.
+3. **`batch_process_spectral_v4.py`** — run step 2 over a directory of micrographs in parallel
+   (matches each micrograph to its `..._splines.mrc` mask via `--mask-dir` / `--mask-suffix`).
+
+All three are CLI-driven (`--help`).
 
 ## Install / dependencies
 
