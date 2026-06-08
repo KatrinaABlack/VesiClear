@@ -2,7 +2,7 @@
 """Batch processing script for the spectral v4 membrane subtraction.
 
 This script:
-* Calls ``membrane_subtraction_v4_clipped.py`` (safe version).
+* Calls ``membrane_subtraction.py`` (safe version).
 * Uses ``tqdm`` for a progress bar.
 * Does NOT add an output suffix.
 * Matches masks by UID + suffix.
@@ -52,7 +52,7 @@ def main():
     
     # Get the directory where this batch script resides
     script_dir = os.path.dirname(os.path.realpath(__file__))
-    default_worker = os.path.join(script_dir, "membrane_subtraction_v4_clipped.py")
+    default_worker = os.path.join(script_dir, "membrane_subtraction.py")
     
     parser.add_argument("--script", default=default_worker, help="Path to the v4 subtraction script")
     parser.add_argument("--jobs", "-j", type=int, default=1, help="Number of parallel jobs")

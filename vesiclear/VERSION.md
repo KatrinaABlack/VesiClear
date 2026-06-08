@@ -28,7 +28,7 @@ A gapped vesicle now emits multiple (inner, center, outer) triples (one per supp
 ## Status / not yet done
 - Calibrated only by eye on mic 11466188286478496947 (see test_data/gaps_v9/). Thresholds
   (`gap_confidence`, `gap_min_arc`) likely need a sweep.
-- NOT wired into the production CLI (`pick_membrane_robust.py` / `picking_parser.py`) yet -
+- NOT wired into the production CLI (`pick_membrane.py` / `picking_parser.py`) yet -
   would need the three params added there for a full 41-mic run.
 
 ## Diagnostics (test_data/gaps_v9/)

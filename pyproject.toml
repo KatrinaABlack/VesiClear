@@ -22,7 +22,7 @@ dependencies = [
 [project.urls]
 Repository = "https://github.com/KatrinaABlack/VesiClear"
 
-# Note: the leaflet-refinement entry point (vesiclear/pick_membrane_robust.py) additionally
+# Note: the leaflet-refinement entry point (vesiclear/pick_membrane.py) additionally
 # requires the `vesicle_picker` package for SAM mask import and cryoSPARC micrograph access.
 
 [tool.setuptools]

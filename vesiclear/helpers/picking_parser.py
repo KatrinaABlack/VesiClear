@@ -11,7 +11,7 @@ def parse_args(args_list: list[str]) -> tuple[Namespace, dict, dict, dict]:
     """
     # Define the Argument parser and all accepted arguments
     parser = ArgumentParser(
-        prog="pick_membrane_robust.py",
+        prog="pick_membrane.py",
         description="Pick refined membrane coordinates via a robust weighted-spline centerline fit"
     )
     parser.add_argument(
