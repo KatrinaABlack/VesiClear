@@ -1,0 +1,17 @@
+# caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# data / outputs (never commit micrographs, masks, splines, figures)
+*.mrc
+*.pkl
+*.npy
+*.npz
+*.png
+*.tif
+*.tiff
+
+# configs that may reference credentials / machine paths
+*.ini

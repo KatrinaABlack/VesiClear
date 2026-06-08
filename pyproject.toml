@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vesiclear"
+version = "0.1.0"
+description = "Membrane refinement and subtraction for cryo-EM vesicles"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Katrina Black", email = "katrina.anne.black@gmail.com" }]
+keywords = ["cryo-EM", "membrane", "vesicle", "segmentation", "signal subtraction"]
+dependencies = [
+    "numpy",
+    "scipy",
+    "opencv-python",
+    "mrcfile",
+    "matplotlib",
+]
+
+[project.urls]
+Repository = "https://github.com/KatrinaABlack/VesiClear"
+
+# Note: the leaflet-refinement entry point (vesiclear/pick_membrane_robust.py) additionally
+# requires the `vesicle_picker` package for SAM mask import and cryoSPARC micrograph access.
+
+[tool.setuptools]
+packages = ["vesiclear"]
